@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ademir Constantino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff9cc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 42px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .links a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #0b5ed7;
+      font-weight: 500;
+    }
+
+    .panel {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .panel:hover {
+      transform: translateY(-2px);
+    }
+
+    .panel-title {
+      font-weight: 600;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-content {
+      display: none;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Ademir Constantino</h1>
+    <div class="subtitle">
+      Software Developer | Software Engineer<br>
+      Curitiba, PR, Brasil
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/ademirconstantino" target="_blank">GitHub</a>
+      <a href="https://blog.constantinoit.com" target="_blank">Blog</a>
+      <a href="https://www.constantinoit.com" target="_blank">Site</a>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        Sobre mim
+        <span>+</span>
+      </div>
+      <div class="panel-content">
+        <p>
+          Sou desenvolvedor de software com experiência em criação de soluções web, APIs e sistemas escaláveis.
+          Gosto de trabalhar com código limpo, boas práticas e tecnologias modernas.
+        </p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        Projetos no GitHub
+        <span>+</span>
+      </div>
+      <div class="panel-content">
+        <p>
+          Confira meus principais projetos no GitHub:
+        </p>
+        <a href="https://github.com/ademirconstantino" target="_blank">
+          https://github.com/ademirconstantino
+        </a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        Produção Técnica (Artigos)
+        <span>+</span>
+      </div>
+      <div class="panel-content">
+        <ul>
+          <li><a href="pdfs/artigo1.pdf" target="_blank">Artigo 1 - Título do PDF</a></li>
+          <li><a href="pdfs/artigo2.pdf" target="_blank">Artigo 2 - Título do PDF</a></li>
+          <li><a href="pdfs/artigo3.pdf" target="_blank">Artigo 3 - Título do PDF</a></li>
+          <li><a href="pdfs/artigo4.pdf" target="_blank">Artigo 4 - Título do PDF</a></li>
+          <li><a href="pdfs/artigo5.pdf" target="_blank">Artigo 5 - Título do PDF</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 — Ademir Constantino
+    </footer>
+  </div>
+
+  <script>
+    $('.panel').on('click', function() {
+      const content = $(this).find('.panel-content');
+      const icon = $(this).find('span');
+
+      content.slideToggle(200);
+
+      if (icon.text() === '+') {
+        icon.text('-');
+      } else {
+        icon.text('+');
+      }
+    });
+  </script>
+
+</body>
+</html>
