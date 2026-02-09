@@ -6,61 +6,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
   <style>
+    :root {
+      --bg: #fffbe6;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #f59e0b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #fbbf24;
+      }
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fff9cc;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
     }
 
     .container {
-      max-width: 900px;
+      max-width: 980px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
+    }
+
+    header {
+      margin-bottom: 40px;
     }
 
     h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: 42px;
-      margin-bottom: 5px;
+      font-size: 48px;
+      margin: 0;
+      letter-spacing: -1px;
     }
 
     .subtitle {
       font-size: 18px;
-      color: #444;
-      margin-bottom: 30px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .links {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .links a {
-      margin-right: 15px;
+      background: var(--card);
+      padding: 10px 14px;
+      border-radius: 10px;
       text-decoration: none;
-      color: #0b5ed7;
+      color: var(--text);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-weight: 500;
     }
 
-    .panel {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .panel:hover {
+    .links a:hover {
       transform: translateY(-2px);
     }
 
+    .panel {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-3px);
+    }
+
     .panel-title {
+      font-size: 20px;
       font-weight: 600;
-      font-size: 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -68,61 +112,71 @@
 
     .panel-content {
       display: none;
-      margin-top: 15px;
-      line-height: 1.6;
+      margin-top: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     footer {
+      margin-top: 80px;
       text-align: center;
-      margin-top: 60px;
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Ademir Constantino</h1>
-    <div class="subtitle">
-      Software Developer | Software Engineer<br>
-      Curitiba, PR, Brasil
-    </div>
 
-    <div class="links">
-      <a href="https://github.com/ademirconstantino" target="_blank">GitHub</a>
-      <a href="https://blog.constantinoit.com" target="_blank">Blog</a>
-      <a href="https://www.constantinoit.com" target="_blank">Site</a>
-    </div>
+    <header>
+      <h1>Ademir Constantino</h1>
+      <div class="subtitle">
+        Software Developer | Software Engineer — Curitiba, PR, Brasil
+      </div>
+
+      <div class="links">
+        <a href="https://github.com/ademirconstantino" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://blog.constantinoit.com" target="_blank">
+          <i class="fa-solid fa-blog"></i> Blog
+        </a>
+        <a href="https://www.constantinoit.com" target="_blank">
+          <i class="fa-solid fa-globe"></i> Site
+        </a>
+      </div>
+    </header>
 
     <div class="panel">
       <div class="panel-title">
         Sobre mim
-        <span>+</span>
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
       <div class="panel-content">
-        <p>
-          Sou desenvolvedor de software com experiência em criação de soluções web, APIs e sistemas escaláveis.
-          Gosto de trabalhar com código limpo, boas práticas e tecnologias modernas.
-        </p>
+        Desenvolvedor de software com foco em backend e web, apaixonado por boas práticas,
+        arquitetura de sistemas, performance e qualidade de código.
       </div>
     </div>
 
     <div class="panel">
       <div class="panel-title">
         Projetos no GitHub
-        <span>+</span>
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
       <div class="panel-content">
-        <p>
-          Confira meus principais projetos no GitHub:
-        </p>
         <a href="https://github.com/ademirconstantino" target="_blank">
-          https://github.com/ademirconstantino
+          👉 github.com/ademirconstantino
         </a>
       </div>
     </div>
@@ -130,7 +184,7 @@
     <div class="panel">
       <div class="panel-title">
         Produção Técnica (Artigos)
-        <span>+</span>
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
       <div class="panel-content">
         <ul>
@@ -146,20 +200,13 @@
     <footer>
       © 2026 — Ademir Constantino
     </footer>
+
   </div>
 
   <script>
     $('.panel').on('click', function() {
-      const content = $(this).find('.panel-content');
-      const icon = $(this).find('span');
-
-      content.slideToggle(200);
-
-      if (icon.text() === '+') {
-        icon.text('-');
-      } else {
-        icon.text('+');
-      }
+      $(this).find('.panel-content').slideToggle(250);
+      $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
     });
   </script>
 
